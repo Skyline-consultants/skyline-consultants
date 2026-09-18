@@ -1,0 +1,1535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skyline Consultants | Study in the UK</title>
+  <meta name="description" content="Skyline Consultants helps students in the UK and overseas with UK course selection, university selection, further study and application guidance.">
+  <style>
+    :root{
+      --navy:#071a35;
+      --navy2:#0d2b52;
+      --blue:#1264d8;
+      --blue2:#2d83f7;
+      --sky:#eaf4ff;
+      --gold:#e8b84b;
+      --white:#fff;
+      --light:#f6f9fc;
+      --text:#172033;
+      --muted:#667085;
+      --border:#e3e9f1;
+      --green:#159957;
+      --red:#c62828;
+      --shadow:0 18px 50px rgba(7,26,53,.10);
+      --radius:20px;
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:Arial,Helvetica,sans-serif;
+      color:var(--text);
+      background:var(--white);
+      line-height:1.65;
+    }
+    a{text-decoration:none;color:inherit}
+    button,input,select,textarea{font:inherit}
+    button{cursor:pointer}
+    .container{width:min(1160px,92%);margin:auto}
+
+    /* HEADER */
+    header{
+      position:sticky;
+      top:0;
+      z-index:1000;
+      background:rgba(7,26,53,.97);
+      box-shadow:0 5px 25px rgba(0,0,0,.12);
+    }
+    .nav{
+      min-height:74px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+    }
+    .logo{
+      color:#fff;
+      font-weight:800;
+      font-size:1.35rem;
+      letter-spacing:.2px;
+      white-space:nowrap;
+    }
+    .logo span{color:var(--gold)}
+    .nav-links{
+      display:flex;
+      align-items:center;
+      gap:20px;
+      list-style:none;
+    }
+    .nav-links a{
+      color:#fff;
+      font-size:.93rem;
+      opacity:.92;
+      transition:.2s;
+    }
+    .nav-links a:hover{color:var(--gold)}
+    .nav-cta{
+      background:var(--gold);
+      color:var(--navy)!important;
+      padding:10px 15px;
+      border-radius:999px;
+      font-weight:800;
+      opacity:1!important;
+    }
+    .menu-btn{
+      display:none;
+      border:0;
+      background:transparent;
+      color:#fff;
+      font-size:1.8rem;
+    }
+
+    /* HERO */
+    .hero{
+      min-height:620px;
+      display:flex;
+      align-items:center;
+      color:#fff;
+      background:
+        linear-gradient(90deg,rgba(7,26,53,.96),rgba(7,26,53,.73),rgba(7,26,53,.35)),
+        url("https://images.unsplash.com/photo-1529655683826-aba9b3e77383?auto=format&fit=crop&w=2000&q=85")
+        center/cover no-repeat;
+    }
+    .hero-content{max-width:780px;padding:80px 0}
+    .eyebrow{
+      display:inline-block;
+      padding:7px 12px;
+      border:1px solid rgba(255,255,255,.35);
+      border-radius:999px;
+      font-size:.82rem;
+      margin-bottom:18px;
+      background:rgba(255,255,255,.08);
+    }
+    h1{
+      font-size:clamp(2.4rem,5vw,4.5rem);
+      line-height:1.08;
+      margin-bottom:20px;
+    }
+    .hero p{
+      font-size:1.12rem;
+      max-width:690px;
+      color:#eef5ff;
+      margin-bottom:30px;
+    }
+    .hero-buttons{display:flex;flex-wrap:wrap;gap:12px}
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      border:0;
+      border-radius:12px;
+      padding:13px 20px;
+      font-weight:800;
+      transition:.2s;
+    }
+    .btn:hover{transform:translateY(-2px)}
+    .btn-primary{background:var(--gold);color:var(--navy)}
+    .btn-blue{background:var(--blue);color:#fff}
+    .btn-outline{border:1px solid rgba(255,255,255,.5);color:#fff;background:rgba(255,255,255,.06)}
+
+    /* GENERAL */
+    section{padding:82px 0}
+    section.alt{background:var(--light)}
+    .section-head{text-align:center;max-width:760px;margin:0 auto 42px}
+    .section-head .tag{
+      color:var(--blue);
+      font-weight:800;
+      font-size:.82rem;
+      text-transform:uppercase;
+      letter-spacing:1px;
+    }
+    .section-head h2{
+      font-size:clamp(1.9rem,3.5vw,3rem);
+      color:var(--navy);
+      margin:8px 0 12px;
+      line-height:1.15;
+    }
+    .section-head p{color:var(--muted)}
+
+    .grid{display:grid;gap:20px}
+    .grid-2{grid-template-columns:repeat(2,1fr)}
+    .grid-3{grid-template-columns:repeat(3,1fr)}
+    .grid-4{grid-template-columns:repeat(4,1fr)}
+    .card{
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      padding:25px;
+      box-shadow:var(--shadow);
+    }
+    .card h3{color:var(--navy);margin-bottom:9px}
+    .card p{color:var(--muted)}
+    .icon{
+      width:48px;height:48px;
+      display:grid;place-items:center;
+      border-radius:14px;
+      background:var(--sky);
+      margin-bottom:16px;
+      font-size:1.4rem;
+    }
+    .check-list{list-style:none;display:grid;gap:9px;margin-top:16px}
+    .check-list li:before{content:"✓";color:var(--green);font-weight:900;margin-right:9px}
+
+    /* COURSE / UNIVERSITY FINDERS */
+    .finder{
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:24px;
+      padding:25px;
+      box-shadow:var(--shadow);
+    }
+    .filters{
+      display:grid;
+      grid-template-columns:2fr 1fr 1fr auto;
+      gap:12px;
+      margin-bottom:25px;
+    }
+    .filters.uni-filters{
+      grid-template-columns:1.7fr 1fr 1fr 1fr auto;
+    }
+    .field label{
+      display:block;
+      font-size:.84rem;
+      font-weight:800;
+      color:var(--navy);
+      margin-bottom:6px;
+    }
+    input,select,textarea{
+      width:100%;
+      border:1px solid #ccd5e2;
+      border-radius:11px;
+      padding:12px 13px;
+      background:#fff;
+      color:var(--text);
+      outline:none;
+    }
+    input:focus,select:focus,textarea:focus{
+      border-color:var(--blue);
+      box-shadow:0 0 0 3px rgba(18,100,216,.10);
+    }
+    textarea{min-height:130px;resize:vertical}
+    .results-top{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:15px;
+      margin-bottom:15px;
+    }
+    .count{font-weight:800;color:var(--navy)}
+    .course-grid,.uni-grid{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:16px;
+    }
+    .result-card{
+      border:1px solid var(--border);
+      border-radius:17px;
+      padding:20px;
+      background:#fff;
+      transition:.2s;
+    }
+    .result-card:hover{transform:translateY(-3px);box-shadow:0 12px 35px rgba(7,26,53,.08)}
+    .result-card h3{color:var(--navy);margin-bottom:7px}
+    .result-card p{color:var(--muted);font-size:.94rem}
+    .chips{display:flex;flex-wrap:wrap;gap:7px;margin:13px 0}
+    .chip{
+      background:var(--sky);
+      color:var(--blue);
+      border-radius:999px;
+      padding:5px 9px;
+      font-size:.76rem;
+      font-weight:800;
+    }
+    .official{
+      display:inline-block;
+      color:var(--blue);
+      font-weight:800;
+      margin-top:5px;
+    }
+    .empty{
+      text-align:center;
+      padding:30px;
+      color:var(--muted);
+      border:1px dashed #cbd5e1;
+      border-radius:15px;
+      grid-column:1/-1;
+    }
+
+    /* FIND MY COURSE */
+    .questionnaire{
+      background:linear-gradient(135deg,var(--navy),var(--navy2));
+      color:#fff;
+      border-radius:26px;
+      padding:35px;
+      box-shadow:var(--shadow);
+    }
+    .questionnaire h2{font-size:2rem;margin-bottom:8px}
+    .questionnaire > p{color:#d8e6f7;margin-bottom:25px}
+    .q-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+    .questionnaire label{color:#fff}
+    .questionnaire select{background:#fff}
+    .recommendation{
+      margin-top:25px;
+      padding:20px;
+      border-radius:16px;
+      background:#fff;
+      color:var(--text);
+      display:none;
+    }
+    .recommendation.show{display:block}
+    .recommendation h3{color:var(--navy);margin-bottom:8px}
+
+    /* VISA */
+    .visa-number{
+      font-size:2rem;
+      color:var(--navy);
+      font-weight:900;
+      margin:6px 0;
+    }
+    .visa-card small{color:var(--muted)}
+    .notice{
+      margin-top:20px;
+      background:#fff8e7;
+      border:1px solid #f0d487;
+      padding:18px;
+      border-radius:14px;
+      color:#5f4b14;
+    }
+
+    /* FORM */
+    .consultation-wrap{
+      display:grid;
+      grid-template-columns:.8fr 1.2fr;
+      gap:28px;
+      align-items:start;
+    }
+    .contact-info{
+      background:var(--navy);
+      color:#fff;
+      border-radius:24px;
+      padding:30px;
+    }
+    .contact-info h3{font-size:1.7rem;margin-bottom:10px}
+    .contact-info p{color:#d7e5f6}
+    .contact-item{
+      margin-top:20px;
+      padding-top:18px;
+      border-top:1px solid rgba(255,255,255,.15);
+    }
+    .contact-item strong{display:block;color:#fff;margin-bottom:4px}
+    .form-card{
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:24px;
+      padding:30px;
+      box-shadow:var(--shadow);
+    }
+    .form-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:15px}
+    .full{grid-column:1/-1}
+    .required{color:var(--red)}
+    .form-note{font-size:.82rem;color:var(--muted);margin-top:10px}
+    .success{
+      display:none;
+      margin-top:18px;
+      padding:16px;
+      background:#e9f8ef;
+      color:#126b3e;
+      border:1px solid #b7e3c9;
+      border-radius:12px;
+      font-weight:700;
+    }
+    .success.show{display:block}
+    .form-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+
+    /* FAQ */
+    details{
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:14px;
+      padding:17px 20px;
+    }
+    details+details{margin-top:10px}
+    summary{cursor:pointer;font-weight:800;color:var(--navy)}
+    details p{color:var(--muted);padding-top:12px}
+
+    /* FOOTER */
+    footer{background:#041225;color:#cbd8e8;padding:45px 0 25px}
+    .footer-grid{
+      display:grid;
+      grid-template-columns:1.4fr 1fr 1fr;
+      gap:35px;
+    }
+    footer h3,footer h4{color:#fff;margin-bottom:12px}
+    footer a{color:#cbd8e8}
+    footer a:hover{color:var(--gold)}
+    .footer-bottom{
+      border-top:1px solid rgba(255,255,255,.12);
+      margin-top:30px;
+      padding-top:18px;
+      font-size:.84rem;
+      color:#9fb0c5;
+    }
+
+    /* FLOATING WHATSAPP */
+    .whatsapp{
+      position:fixed;
+      right:20px;
+      bottom:20px;
+      z-index:999;
+      background:#25D366;
+      color:#fff;
+      width:58px;height:58px;
+      border-radius:50%;
+      display:grid;place-items:center;
+      font-size:1.45rem;
+      font-weight:900;
+      box-shadow:0 10px 25px rgba(0,0,0,.2);
+    }
+
+    /* RESPONSIVE */
+    @media(max-width:1000px){
+      .filters,.filters.uni-filters{grid-template-columns:1fr 1fr}
+      .filters .filter-action{grid-column:1/-1}
+      .grid-4{grid-template-columns:repeat(2,1fr)}
+      .consultation-wrap{grid-template-columns:1fr}
+    }
+    @media(max-width:800px){
+      .menu-btn{display:block}
+      .nav-links{
+        display:none;
+        position:absolute;
+        top:74px;left:0;right:0;
+        background:var(--navy);
+        padding:15px 5%;
+        flex-direction:column;
+        align-items:stretch;
+      }
+      .nav-links.open{display:flex}
+      .nav-links a{display:block;padding:10px}
+      .grid-2,.grid-3,.course-grid,.uni-grid,.q-grid,.form-grid,.footer-grid{grid-template-columns:1fr}
+      .full{grid-column:auto}
+      .hero{min-height:570px}
+    }
+    @media(max-width:600px){
+      section{padding:62px 0}
+      .filters,.filters.uni-filters{grid-template-columns:1fr}
+      .filters .filter-action{grid-column:auto}
+      .grid-4{grid-template-columns:1fr}
+      .questionnaire,.form-card,.contact-info,.finder{padding:22px}
+      .hero-buttons .btn{width:100%}
+      .logo{font-size:1.12rem}
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="container nav">
+    <a href="#home" class="logo">Skyline <span>Consultants</span></a>
+
+    <button class="menu-btn" onclick="toggleMenu()" aria-label="Open menu">☰</button>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home" onclick="closeMenu()">Home</a></li>
+      <li><a href="#who-we-help" onclick="closeMenu()">Who We Help</a></li>
+      <li><a href="#services" onclick="closeMenu()">Services</a></li>
+      <li><a href="#courses" onclick="closeMenu()">Courses</a></li>
+      <li><a href="#universities" onclick="closeMenu()">Universities</a></li>
+      <li><a href="#visa" onclick="closeMenu()">Visa</a></li>
+      <li><a href="#consultation" onclick="closeMenu()">Consultation</a></li>
+      <li><a class="nav-cta" href="https://wa.me/923108819008?text=Hello%20Skyline%20Consultants%2C%20I%20would%20like%20a%20consultation." target="_blank">WhatsApp</a></li>
+    </ul>
+  </div>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="container">
+      <div class="hero-content">
+        <span class="eyebrow">UK Study & Further Study Consultancy</span>
+        <h1>Your Next Step in the UK Starts With Skyline.</h1>
+        <p>
+          We help students in Pakistan, the UK and other countries explore
+          courses, universities, further study routes and UK study guidance.
+        </p>
+        <div class="hero-buttons">
+          <a href="#courses" class="btn btn-primary">Find Your Course</a>
+          <a href="#universities" class="btn btn-blue">Explore Universities</a>
+          <a href="#consultation" class="btn btn-outline">Request Consultation</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO WE HELP -->
+  <section id="who-we-help">
+    <div class="container">
+      <div class="section-head">
+        <span class="tag">Who We Help</span>
+        <h2>Guidance for students at different stages</h2>
+        <p>Whether you are planning your first UK study journey or already studying in the UK, Skyline can help you understand your options.</p>
+      </div>
+
+      <div class="grid grid-2">
+        <div class="card">
+          <div class="icon">🇬🇧</div>
+          <h3>Students Already in the UK</h3>
+          <p>Support for students considering further academic study or reviewing their next study route.</p>
+          <ul class="check-list">
+            <li>Bachelor's to Master's</li>
+            <li>Master's to another Master's</li>
+            <li>Master's to PhD or research</li>
+            <li>Exploring another eligible course</li>
+            <li>Student visa approaching expiry</li>
+            <li>Graduate visa approaching expiry</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="icon">🌍</div>
+          <h3>Students Outside the UK</h3>
+          <p>Guidance from choosing a course through university selection and application preparation.</p>
+          <ul class="check-list">
+            <li>Course selection</li>
+            <li>University selection</li>
+            <li>Master's and MBA options</li>
+            <li>Second Master's options</li>
+            <li>PhD and research pathways</li>
+            <li>Student visa guidance</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="alt" id="services">
+    <div class="container">
+      <div class="section-head">
+        <span class="tag">Our Services</span>
+        <h2>What Skyline Consultants can help with</h2>
+        <p>Use the tools below to explore options, then request a consultation for personalised guidance.</p>
+      </div>
+
+      <div class="grid grid-3">
+        <div class="card"><div class="icon">🎓</div><h3>University Selection</h3><p>Compare universities and explore official university information before making an academic decision.</p></div>
+        <div class="card"><div class="icon">🔎</div><h3>Course Selection</h3><p>Explore study areas and identify courses that may fit your academic direction.</p></div>
+        <div class="card"><div class="icon">📄</div><h3>Application Support</h3><p>Guidance with application preparation, documents and the next steps in the process.</p></div>
+        <div class="card"><div class="icon">📚</div><h3>Further Study</h3><p>Explore routes from Bachelor's to Master's, Master's to further Master's and doctoral study.</p></div>
+        <div class="card"><div class="icon">🛂</div><h3>UK Study Guidance</h3><p>Information about Student and Graduate routes using official UK government sources.</p></div>
+        <div class="card"><div class="icon">💬</div><h3>Personal Consultation</h3><p>Tell us about your background and goals so we can discuss suitable options with you.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FURTHER STUDY -->
+  <section>
+    <div class="container">
+      <div class="section-head">
+        <span class="tag">Further Study</span>
+        <h2>Thinking about your next qualification?</h2>
+        <p>Your next step can depend on your previous qualification, subject, goals, university and current immigration situation.</p>
+      </div>
+
+      <div class="grid grid-4">
+        <div class="card"><div class="icon">1</div><h3>Bachelor's → Master's</h3><p>Explore postgraduate study after completing your Bachelor's degree.</p></div>
+        <div class="card"><div class="icon">2</div><h3>Master's → Master's</h3><p>Explore another postgraduate qualification where an appropriate academic route exists.</p></div>
+        <div class="card"><div class="icon">3</div><h3>Master's → PhD</h3><p>Explore doctoral and research pathways based on your academic background.</p></div>
+        <div class="card"><div class="icon">4</div><h3>UK Students</h3><p>Review your next academic option before your current course or visa reaches its end.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COURSE FINDER -->
+  <section class="alt" id="courses">
+    <div class="container">
+      <div class="section-head">
+        <span class="tag">Interactive Course Finder</span>
+        <h2>Find a study area</h2>
+        <p>Search the study areas available in our current website directory. Course availability, fees, entry requirements and intakes should always be checked on the university's official website.</p>
+      </div>
+
+      <div class="finder">
+        <div class="filters">
+          <div class="field">
+            <label for="courseSearch">Search</label>
+            <input id="courseSearch" type="search" placeholder="e.g. business, computing, healthcare">
+          </div>
+
+          <div class="field">
+            <label for="courseLevel">Study Level</label>
+            <select id="courseLevel">
+              <option value="">All levels</option>
+              <option value="Undergraduate">Undergraduate</option>
+              <option value="Master's">Master's</option>
+              <option value="MBA">MBA</option>
+              <option value="PhD / Research">PhD / Research</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="courseSubject">Subject</label>
+            <select id="courseSubject">
+              <option value="">All subjects</option>
+              <option>Business & Management</option>
+              <option>Computing & Technology</option>
+              <option>Engineering</option>
+              <option>Healthcare</option>
+              <option>Accounting & Finance</option>
+              <option>Law</option>
+              <option>Education</option>
+              <option>Psychology & Social Sciences</option>
+              <option>Hospitality & Tourism</option>
+              <option>Research & PhD</option>
+            </select>
+          </div>
+
+          <div class="filter-action">
+            <label>&nbsp;</label>
+            <button class="btn btn-blue" onclick="filterCourses()">Search Courses</button>
+          </div>
+        </div>
+
+        <div class="results-top">
+          <div class="count" id="courseCount">0 options</div>
+          <button class="btn" style="background:#eef2f7;color:#172033" onclick="clearCourseSearch()">Clear Filters</button>
+        </div>
+
+        <div class="course-grid" id="courseResults"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- UNIVERSITY FINDER -->
+  <section id="universities">
+    <div class="container">
+      <div class="section-head">
+        <span class="tag">University Finder</span>
+        <h2>Explore our university directory</h2>
+        <p>These are the universities currently featured on the Skyline website. Always use the official university website for current course details and requirements.</p>
+      </div>
+
+      <div class="finder">
+        <div class="filters uni-filters">
+          <div class="field">
+            <label for="uniSearch">Search university</label>
+            <input id="uniSearch" type="search" placeholder="e.g. BPP, Birmingham">
+          </div>
+
+          <div class="field">
+            <label for="uniLocation">Location</label>
+            <select id="uniLocation">
+              <option value="">All locations</option>
+              <option>London / Multiple UK locations</option>
+              <option>Birmingham</option>
+              <option>Northern Ireland</option>
+              <option>Wolverhampton</option>
+              <option>Gloucestershire</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="uniSubject">Subject</label>
+            <select id="uniSubject">
+              <option value="">All subjects</option>
+              <option>Business</option>
+              <option>Computing</option>
+              <option>Engineering</option>
+              <option>Healthcare</option>
+              <option>Law</option>
+              <option>Accounting & Finance</option>
+              <option>Hospitality & Tourism</option>
+              <option>Psychology</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="uniLevel">Study Level</label>
+            <select id="uniLevel">
+              <option value="">All levels</option>
+              <option>Undergraduate</option>
+              <option>Master's</option>
+              <option>PhD / Research</option>
+            </select>
+          </div>
+
+          <div class="filter-action">
+            <label>&nbsp;</label>
+            <button class="btn btn-blue" onclick="filterUniversities()">Search</button>
+          </div>
+        </div>
+
+        <div class="results-top">
+          <div class="count" id="uniCount">0 universities</div>
+          <button class="btn" style="background:#eef2f7;color:#172033" onclick="clearUniversitySearch()">Clear Filters</button>
+        </div>
+
+        <div class="uni-grid" id="universityResults"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FIND MY COURSE -->
+  <section class="alt">
+    <div class="container">
+      <div class="questionnaire">
+        <h2>Find My Course</h2>
+        <p>Answer four questions and the website will show university options from the current directory that may match your subject.</p>
+
+        <div class="q-grid">
+          <div class="field">
+            <label for="currentLocation">Where are you currently?</label>
+            <select id="currentLocation">
+              <option value="">Select</option>
+              <option>Already in the UK</option>
+              <option>Outside the UK</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="previousStudy">Previous study</label>
+            <select id="previousStudy">
+              <option value="">Select</option>
+              <option>Business / Management</option>
+              <option>Computing / IT</option>
+              <option>Engineering</option>
+              <option>Healthcare</option>
+              <option>Law</option>
+              <option>Accounting / Finance</option>
+              <option>Psychology / Social Sciences</option>
+              <option>Other</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="nextLevel">What do you want to study next?</label>
+            <select id="nextLevel">
+              <option value="">Select</option>
+              <option>Master's</option>
+              <option>MBA</option>
+              <option>PhD / Research</option>
+              <option>Another Master's</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="preferredSubject">Preferred subject</label>
+            <select id="preferredSubject">
+              <option value="">Select</option>
+              <option>Business & Management</option>
+              <option>Computing & Technology</option>
+              <option>Engineering</option>
+              <option>Healthcare</option>
+              <option>Accounting & Finance</option>
+              <option>Law</option>
+              <option>Education</option>
+              <option>Psychology & Social Sciences</option>
+              <option>Hospitality & Tourism</option>
+              <option>Research & PhD</option>
+            </select>
+          </div>
+        </div>
+
+        <div style="margin-top:18px">
+          <button class="btn btn-primary" onclick="findMyCourse()">Show My Options</button>
+        </div>
+
+        <div class="recommendation" id="recommendation"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VISA -->
+  <section id="visa">
+    <div class="container">
+      <div class="section-head">
+        <span class="tag">UK Study Visa Information</span>
+        <h2>Important information for students</h2>
+        <p>Visa rules can change. The information below is for general website guidance and should be checked against the official UK government pages before an application.</p>
+      </div>
+
+      <div class="grid grid-3">
+        <div class="card visa-card">
+          <h3>Student visa application fee</h3>
+          <div class="visa-number">£558</div>
+          <small>Current figure shown on GOV.UK. Check the official page before applying.</small>
+        </div>
+
+        <div class="card visa-card">
+          <h3>Monthly funds in London</h3>
+          <div class="visa-number">£1,529</div>
+          <small>Maintenance amount per month where the financial requirement applies.</small>
+        </div>
+
+        <div class="card visa-card">
+          <h3>Monthly funds outside London</h3>
+          <div class="visa-number">£1,171</div>
+          <small>Maintenance amount per month where the financial requirement applies.</small>
+        </div>
+      </div>
+
+      <div class="grid grid-2" style="margin-top:20px">
+        <div class="card">
+          <h3>Student visa basics</h3>
+          <ul class="check-list">
+            <li>You normally need an offer from a licensed student sponsor.</li>
+            <li>You normally need a Confirmation of Acceptance for Studies (CAS).</li>
+            <li>Financial evidence may be required depending on your circumstances.</li>
+            <li>Academic progression rules can apply to students extending from inside the UK.</li>
+            <li>Application timing and eligibility depend on your individual circumstances.</li>
+          </ul>
+          <a class="official" href="https://www.gov.uk/student-visa" target="_blank">Official GOV.UK Student visa information →</a>
+        </div>
+
+        <div class="card">
+          <h3>Graduate visa</h3>
+          <ul class="check-list">
+            <li>Applications made on or before 31 December 2026 are shown by GOV.UK as having a 2 year duration.</li>
+            <li>Applications made from 1 January 2027 are shown as having an 18 month duration.</li>
+            <li>PhD or doctoral graduates can have a 3 year Graduate visa.</li>
+            <li>The Graduate visa cannot itself be extended.</li>
+          </ul>
+          <a class="official" href="https://www.gov.uk/graduate-visa" target="_blank">Official GOV.UK Graduate visa information →</a>
+        </div>
+      </div>
+
+      <div class="notice">
+        <strong>Important:</strong> Skyline Consultants provides study and application guidance through this website. Immigration rules are subject to change and individual eligibility varies. Students should check GOV.UK and obtain regulated immigration advice where appropriate.
+      </div>
+    </div>
+  </section>
+
+  <!-- SCHOLARSHIPS -->
+  <section class="alt">
+    <div class="container">
+      <div class="section-head">
+        <span class="tag">Scholarships</span>
+        <h2>Funding opportunities</h2>
+        <p>Scholarships, discounts and bursaries vary by university, course, nationality, intake and funding conditions.</p>
+      </div>
+
+      <div class="grid grid-3">
+        <div class="card"><div class="icon">💷</div><h3>University Scholarships</h3><p>Check individual university scholarship and funding pages for current opportunities.</p></div>
+        <div class="card"><div class="icon">🎯</div><h3>Merit Based Awards</h3><p>Some universities offer awards linked to academic performance or other eligibility criteria.</p></div>
+        <div class="card"><div class="icon">📅</div><h3>Intake Planning</h3><p>Scholarship deadlines can be different from course application deadlines, so early research is important.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section>
+    <div class="container">
+      <div class="section-head">
+        <span class="tag">Our Process</span>
+        <h2>From first conversation to your next step</h2>
+      </div>
+
+      <div class="grid grid-4">
+        <div class="card"><div class="icon">01</div><h3>Tell Us About You</h3><p>Share your academic background, location and goals.</p></div>
+        <div class="card"><div class="icon">02</div><h3>Explore Options</h3><p>Use the Course and University Finders to explore possible routes.</p></div>
+        <div class="card"><div class="icon">03</div><h3>Choose Your Route</h3><p>Discuss your options with Skyline before moving forward.</p></div>
+        <div class="card"><div class="icon">04</div><h3>Prepare Your Application</h3><p>Move through the next application steps with organised guidance.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="alt">
+    <div class="container">
+      <div class="section-head">
+        <span class="tag">About Skyline</span>
+        <h2>Clear information before a major academic decision</h2>
+        <p>Skyline Consultants is based in Pakistan and supports students in Pakistan, the UK and other countries who are exploring UK study and further study options.</p>
+      </div>
+      <div class="card">
+        <p>
+          Our focus is on helping students understand their course choices, university options,
+          further study routes and application steps. The website is designed to give students
+          useful starting information while encouraging them to verify current course and visa
+          details through official sources.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONSULTATION FORM -->
+  <section id="consultation">
+    <div class="container">
+      <div class="section-head">
+        <span class="tag">Request a Consultation</span>
+        <h2>Tell us what you need help with</h2>
+        <p>Complete the form below. On this first version, the form can prepare a complete WhatsApp message for Skyline and also save the request in this browser for testing.</p>
+      </div>
+
+      <div class="consultation-wrap">
+
+        <div class="contact-info">
+          <h3>Skyline Consultants</h3>
+          <p>UK study, further study and university guidance.</p>
+
+          <div class="contact-item">
+            <strong>WhatsApp</strong>
+            <a href="https://wa.me/923108819008" target="_blank">0310 8819008</a>
+          </div>
+
+          <div class="contact-item">
+            <strong>Based in</strong>
+            Pakistan
+          </div>
+
+          <div class="contact-item">
+            <strong>Students we support</strong>
+            UK and international students
+          </div>
+
+          <div class="contact-item">
+            <strong>Study destination</strong>
+            United Kingdom
+          </div>
+        </div>
+
+        <div class="form-card">
+          <form id="consultationForm" onsubmit="submitConsultation(event)">
+            <div class="form-grid">
+
+              <div class="field">
+                <label for="name">Full Name <span class="required">*</span></label>
+                <input id="name" required placeholder="Your full name">
+              </div>
+
+              <div class="field">
+                <label for="phone">WhatsApp Number <span class="required">*</span></label>
+                <input id="phone" required placeholder="e.g. 03001234567">
+              </div>
+
+              <div class="field">
+                <label for="email">Email Address</label>
+                <input id="email" type="email" placeholder="you@example.com">
+              </div>
+
+              <div class="field">
+                <label for="location">Current Location <span class="required">*</span></label>
+                <select id="location" required>
+                  <option value="">Select</option>
+                  <option>Pakistan</option>
+                  <option>United Kingdom</option>
+                  <option>Other country</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="qualification">Current / Highest Qualification</label>
+                <input id="qualification" placeholder="e.g. BBA, BSCS, MSc">
+              </div>
+
+              <div class="field">
+                <label for="interest">What do you need help with? <span class="required">*</span></label>
+                <select id="interest" required>
+                  <option value="">Select</option>
+                  <option>Course Selection</option>
+                  <option>University Selection</option>
+                  <option>Master's</option>
+                  <option>MBA</option>
+                  <option>Another Master's</option>
+                  <option>PhD / Research</option>
+                  <option>Student Visa Guidance</option>
+                  <option>Graduate Visa Information</option>
+                  <option>Application Support</option>
+                  <option>General Consultation</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="subject">Preferred Subject</label>
+                <select id="subject">
+                  <option value="">Select</option>
+                  <option>Business & Management</option>
+                  <option>Computing & Technology</option>
+                  <option>Engineering</option>
+                  <option>Healthcare</option>
+                  <option>Accounting & Finance</option>
+                  <option>Law</option>
+                  <option>Education</option>
+                  <option>Psychology & Social Sciences</option>
+                  <option>Hospitality & Tourism</option>
+                  <option>Research & PhD</option>
+                  <option>Not sure</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="start">Preferred Start</label>
+                <select id="start">
+                  <option value="">Select</option>
+                  <option>As soon as possible</option>
+                  <option>September intake</option>
+                  <option>January / February intake</option>
+                  <option>Later intake</option>
+                  <option>Not sure</option>
+                </select>
+              </div>
+
+              <div class="field full">
+                <label for="message">Your Questions / Message</label>
+                <textarea id="message" placeholder="Tell us about your situation and what you would like to know."></textarea>
+              </div>
+
+            </div>
+
+            <div class="form-actions">
+              <button type="submit" class="btn btn-blue">Submit Consultation Request</button>
+              <button type="button" class="btn" style="background:#e9f8ef;color:#126b3e" onclick="sendFormToWhatsApp()">Send on WhatsApp</button>
+            </div>
+
+            <p class="form-note">
+              Required fields are marked with *. This website version does not yet have a server database.
+              The WhatsApp option is ready now. A permanent email/database submission system can be connected when the website is hosted.
+            </p>
+
+            <div class="success" id="formSuccess">
+              Your consultation details have been prepared. Please use the WhatsApp button to send them to Skyline Consultants.
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="alt">
+    <div class="container">
+      <div class="section-head">
+        <span class="tag">FAQ</span>
+        <h2>Frequently asked questions</h2>
+      </div>
+
+      <details>
+        <summary>Can Skyline help students who are already in the UK?</summary>
+        <p>Yes. The website is designed for students already in the UK as well as students outside the UK who are exploring further study and UK university options.</p>
+      </details>
+
+      <details>
+        <summary>Can I study another Master's after completing a Master's?</summary>
+        <p>Possibility and visa eligibility depend on the student's circumstances, previous study, proposed course and current immigration rules. Students should have their individual situation checked before applying.</p>
+      </details>
+
+      <details>
+        <summary>Can I use the Course Finder as a final course list?</summary>
+        <p>No. It is an initial exploration tool. Course availability, fees, entry requirements, English requirements, intakes and deadlines can change and should be verified on the university's official website.</p>
+      </details>
+
+      <details>
+        <summary>Does the website guarantee a visa?</summary>
+        <p>No. A university offer or consultancy guidance does not guarantee a visa. Visa decisions are made under the applicable UK immigration rules.</p>
+      </details>
+
+      <details>
+        <summary>How do I contact Skyline?</summary>
+        <p>You can use the consultation form, the WhatsApp buttons or the phone number shown on the website.</p>
+      </details>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h3>Skyline Consultants</h3>
+        <p>UK study and further study consultancy based in Pakistan, supporting students in the UK and internationally.</p>
+      </div>
+
+      <div>
+        <h4>Quick Links</h4>
+        <p><a href="#courses">Course Finder</a></p>
+        <p><a href="#universities">University Finder</a></p>
+        <p><a href="#visa">Visa Information</a></p>
+        <p><a href="#consultation">Request Consultation</a></p>
+      </div>
+
+      <div>
+        <h4>Contact</h4>
+        <p>WhatsApp: <a href="https://wa.me/923108819008" target="_blank">0310 8819008</a></p>
+        <p>Pakistan</p>
+        <p>Study Destination: United Kingdom</p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      © 2026 Skyline Consultants. All rights reserved.
+      Information on this website is for general guidance and may change.
+    </div>
+  </div>
+</footer>
+
+<a class="whatsapp" href="https://wa.me/923108819008?text=Hello%20Skyline%20Consultants%2C%20I%20would%20like%20a%20consultation." target="_blank" aria-label="WhatsApp Skyline Consultants">WA</a>
+
+<script>
+  /* =========================
+     SKYLINE COURSE DATABASE
+     ========================= */
+
+  const courses = [
+    {
+      title:"Business & Management",
+      subject:"Business & Management",
+      levels:["Undergraduate","Master's","MBA"],
+      description:"Business, management, leadership, international business and related study areas.",
+      keywords:"business management mba leadership international business"
+    },
+    {
+      title:"Computing & Technology",
+      subject:"Computing & Technology",
+      levels:["Undergraduate","Master's","PhD / Research"],
+      description:"Computing, software, data, artificial intelligence, cybersecurity and related technology areas.",
+      keywords:"computing computer science technology ai artificial intelligence cybersecurity data software"
+    },
+    {
+      title:"Engineering",
+      subject:"Engineering",
+      levels:["Undergraduate","Master's","PhD / Research"],
+      description:"Engineering and technical study areas across different disciplines.",
+      keywords:"engineering technical mechanical electrical civil"
+    },
+    {
+      title:"Healthcare",
+      subject:"Healthcare",
+      levels:["Undergraduate","Master's","PhD / Research"],
+      description:"Healthcare, health management, public health and related study areas.",
+      keywords:"healthcare health public health management physiotherapy nursing"
+    },
+    {
+      title:"Accounting & Finance",
+      subject:"Accounting & Finance",
+      levels:["Undergraduate","Master's","MBA"],
+      description:"Accounting, finance, financial management and related business study areas.",
+      keywords:"accounting finance financial management"
+    },
+    {
+      title:"Law",
+      subject:"Law",
+      levels:["Undergraduate","Master's","PhD / Research"],
+      description:"Law, legal studies, professional legal education and related pathways.",
+      keywords:"law legal llm pgdl sqe"
+    },
+    {
+      title:"Education",
+      subject:"Education",
+      levels:["Undergraduate","Master's","PhD / Research"],
+      description:"Education, teaching, leadership and education related study areas.",
+      keywords:"education teaching teacher leadership"
+    },
+    {
+      title:"Psychology & Social Sciences",
+      subject:"Psychology & Social Sciences",
+      levels:["Undergraduate","Master's","PhD / Research"],
+      description:"Psychology and wider social science study areas.",
+      keywords:"psychology social sciences sociology behaviour"
+    },
+    {
+      title:"Hospitality & Tourism",
+      subject:"Hospitality & Tourism",
+      levels:["Undergraduate","Master's","MBA"],
+      description:"Hospitality, tourism, events and related management study areas.",
+      keywords:"hospitality tourism events hotel"
+    },
+    {
+      title:"Research & PhD",
+      subject:"Research & PhD",
+      levels:["PhD / Research"],
+      description:"Research and doctoral pathways across suitable academic disciplines.",
+      keywords:"phd research doctorate doctoral"
+    }
+  ];
+
+  const universities = [
+    {
+      name:"The University of Law",
+      location:"London / Multiple UK locations",
+      subjects:["Law","Business","Psychology"],
+      levels:["Undergraduate","Master's","PhD / Research"],
+      url:"https://www.law.ac.uk/",
+      description:"Specialist university with study options in law and a range of related subjects."
+    },
+    {
+      name:"Birmingham City University",
+      location:"Birmingham",
+      subjects:["Business","Computing","Engineering","Healthcare"],
+      levels:["Undergraduate","Master's","PhD / Research"],
+      url:"https://www.bcu.ac.uk/",
+      description:"Large UK university with a broad range of undergraduate, postgraduate and research areas."
+    },
+    {
+      name:"Ulster University",
+      location:"Northern Ireland",
+      subjects:["Business","Computing","Healthcare"],
+      levels:["Undergraduate","Master's","PhD / Research"],
+      url:"https://www.ulster.ac.uk/",
+      description:"University with campuses in Northern Ireland and a broad academic portfolio."
+    },
+    {
+      name:"University College Birmingham",
+      location:"Birmingham",
+      subjects:["Business","Healthcare","Hospitality & Tourism"],
+      levels:["Undergraduate","Master's"],
+      url:"https://www.ucb.ac.uk/",
+      description:"Specialist university with strong study areas including business, healthcare and hospitality."
+    },
+    {
+      name:"University of Wolverhampton",
+      location:"Wolverhampton",
+      subjects:["Business","Computing","Engineering","Healthcare"],
+      levels:["Undergraduate","Master's","PhD / Research"],
+      url:"https://www.wlv.ac.uk/",
+      description:"UK university offering a wide range of undergraduate, postgraduate and research study."
+    },
+    {
+      name:"BPP University",
+      location:"London / Multiple UK locations",
+      subjects:["Law","Business","Accounting & Finance","Computing"],
+      levels:["Undergraduate","Master's","PhD / Research"],
+      url:"https://www.bpp.com/",
+      description:"Specialist university with professional and postgraduate study across several fields."
+    },
+    {
+      name:"University of Gloucestershire",
+      location:"Gloucestershire",
+      subjects:["Business","Computing","Healthcare","Psychology"],
+      levels:["Undergraduate","Master's","PhD / Research"],
+      url:"https://www.glos.ac.uk/",
+      description:"UK university offering study across business, computing, healthcare, psychology and other areas."
+    }
+  ];
+
+  /* =========================
+     COURSE FINDER
+     ========================= */
+
+  function displayCourses(list){
+    const box = document.getElementById("courseResults");
+    const count = document.getElementById("courseCount");
+
+    count.textContent = `${list.length} ${list.length === 1 ? "option" : "options"}`;
+
+    if(!list.length){
+      box.innerHTML = `<div class="empty">No matching study area found. Try changing your filters.</div>`;
+      return;
+    }
+
+    box.innerHTML = list.map(course => `
+      <article class="result-card">
+        <h3>${course.title}</h3>
+        <p>${course.description}</p>
+        <div class="chips">
+          ${course.levels.map(level => `<span class="chip">${level}</span>`).join("")}
+        </div>
+        <button class="btn btn-blue" onclick="requestCourseConsultation('${course.subject.replace(/'/g,"\\'")}')">Ask About This Area</button>
+      </article>
+    `).join("");
+  }
+
+  function filterCourses(){
+    const search = document.getElementById("courseSearch").value.toLowerCase().trim();
+    const level = document.getElementById("courseLevel").value;
+    const subject = document.getElementById("courseSubject").value;
+
+    const filtered = courses.filter(course => {
+      const searchable = `${course.title} ${course.subject} ${course.description} ${course.keywords}`.toLowerCase();
+
+      const matchesSearch = !search || searchable.includes(search);
+      const matchesLevel = !level || course.levels.includes(level);
+      const matchesSubject = !subject || course.subject === subject;
+
+      return matchesSearch && matchesLevel && matchesSubject;
+    });
+
+    displayCourses(filtered);
+  }
+
+  function clearCourseSearch(){
+    document.getElementById("courseSearch").value = "";
+    document.getElementById("courseLevel").value = "";
+    document.getElementById("courseSubject").value = "";
+    displayCourses(courses);
+  }
+
+  ["courseSearch","courseLevel","courseSubject"].forEach(id => {
+    document.getElementById(id).addEventListener("input", filterCourses);
+    document.getElementById(id).addEventListener("change", filterCourses);
+  });
+
+  function requestCourseConsultation(subject){
+    document.getElementById("interest").value = "Course Selection";
+    document.getElementById("subject").value = subject;
+    document.getElementById("consultation").scrollIntoView({behavior:"smooth"});
+  }
+
+  /* =========================
+     UNIVERSITY FINDER
+     ========================= */
+
+  function displayUniversities(list){
+    const box = document.getElementById("universityResults");
+    const count = document.getElementById("uniCount");
+
+    count.textContent = `${list.length} ${list.length === 1 ? "university" : "universities"}`;
+
+    if(!list.length){
+      box.innerHTML = `<div class="empty">No matching university found. Try changing your filters.</div>`;
+      return;
+    }
+
+    box.innerHTML = list.map(uni => `
+      <article class="result-card">
+        <h3>${uni.name}</h3>
+        <p><strong>Location:</strong> ${uni.location}</p>
+        <p style="margin-top:6px">${uni.description}</p>
+        <div class="chips">
+          ${uni.subjects.map(subject => `<span class="chip">${subject}</span>`).join("")}
+        </div>
+        <a class="official" href="${uni.url}" target="_blank" rel="noopener">Visit Official University Website →</a>
+      </article>
+    `).join("");
+  }
+
+  function filterUniversities(){
+    const search = document.getElementById("uniSearch").value.toLowerCase().trim();
+    const location = document.getElementById("uniLocation").value;
+    const subject = document.getElementById("uniSubject").value;
+    const level = document.getElementById("uniLevel").value;
+
+    const filtered = universities.filter(uni => {
+      const searchable = `${uni.name} ${uni.location} ${uni.subjects.join(" ")}`.toLowerCase();
+
+      const matchesSearch = !search || searchable.includes(search);
+      const matchesLocation = !location || uni.location === location;
+      const matchesSubject = !subject || uni.subjects.includes(subject);
+      const matchesLevel = !level || uni.levels.includes(level);
+
+      return matchesSearch && matchesLocation && matchesSubject && matchesLevel;
+    });
+
+    displayUniversities(filtered);
+  }
+
+  function clearUniversitySearch(){
+    document.getElementById("uniSearch").value = "";
+    document.getElementById("uniLocation").value = "";
+    document.getElementById("uniSubject").value = "";
+    document.getElementById("uniLevel").value = "";
+    displayUniversities(universities);
+  }
+
+  ["uniSearch","uniLocation","uniSubject","uniLevel"].forEach(id => {
+    document.getElementById(id).addEventListener("input", filterUniversities);
+    document.getElementById(id).addEventListener("change", filterUniversities);
+  });
+
+  /* =========================
+     FIND MY COURSE
+     ========================= */
+
+  function findMyCourse(){
+    const location = document.getElementById("currentLocation").value;
+    const previous = document.getElementById("previousStudy").value;
+    const nextLevel = document.getElementById("nextLevel").value;
+    const subject = document.getElementById("preferredSubject").value;
+    const result = document.getElementById("recommendation");
+
+    if(!location || !previous || !nextLevel || !subject){
+      result.className = "recommendation show";
+      result.innerHTML = `<strong>Please complete all four fields first.</strong>`;
+      return;
+    }
+
+    const subjectMap = {
+      "Business & Management":["Business"],
+      "Computing & Technology":["Computing"],
+      "Engineering":["Engineering"],
+      "Healthcare":["Healthcare"],
+      "Accounting & Finance":["Accounting & Finance"],
+      "Law":["Law"],
+      "Education":[],
+      "Psychology & Social Sciences":["Psychology"],
+      "Hospitality & Tourism":["Hospitality & Tourism"],
+      "Research & PhD":[]
+    };
+
+    const targetSubjects = subjectMap[subject] || [];
+
+    let matches = universities.filter(uni => {
+      const subjectMatch = targetSubjects.length === 0 || targetSubjects.some(s => uni.subjects.includes(s));
+      const levelMatch = nextLevel === "PhD / Research" ? uni.levels.includes("PhD / Research") : uni.levels.includes("Master's");
+      return subjectMatch && levelMatch;
+    });
+
+    if(!matches.length){
+      matches = universities.filter(uni => {
+        return nextLevel === "PhD / Research"
+          ? uni.levels.includes("PhD / Research")
+          : uni.levels.includes("Master's");
+      });
+    }
+
+    matches = matches.slice(0,4);
+
+    const message = `Hello Skyline Consultants,
+
+I used the Find My Course tool.
+
+Current location: ${location}
+Previous study: ${previous}
+Next level: ${nextLevel}
+Preferred subject: ${subject}
+
+I would like help reviewing my study options.`;
+
+    const wa = "https://wa.me/923108819008?text=" + encodeURIComponent(message);
+
+    result.className = "recommendation show";
+    result.innerHTML = `
+      <h3>Options to explore</h3>
+      <p style="margin-bottom:12px">Based on the information entered, these universities in the current directory have relevant subject or level categories:</p>
+      <div class="chips">
+        ${matches.map(m => `<span class="chip">${m.name}</span>`).join("")}
+      </div>
+      <p style="margin-top:12px"><strong>Important:</strong> These are starting points, not a final admission or visa assessment. Current course availability and eligibility should be checked.</p>
+      <a class="btn btn-blue" style="margin-top:15px" href="${wa}" target="_blank">Discuss These Options on WhatsApp</a>
+    `;
+  }
+
+  /* =========================
+     CONSULTATION FORM
+     ========================= */
+
+  function getFormData(){
+    return {
+      name: document.getElementById("name").value.trim(),
+      phone: document.getElementById("phone").value.trim(),
+      email: document.getElementById("email").value.trim(),
+      location: document.getElementById("location").value,
+      qualification: document.getElementById("qualification").value.trim(),
+      interest: document.getElementById("interest").value,
+      subject: document.getElementById("subject").value,
+      start: document.getElementById("start").value,
+      message: document.getElementById("message").value.trim()
+    };
+  }
+
+  function createWhatsAppMessage(data){
+    return `Hello Skyline Consultants,
+
+I would like to request a consultation.
+
+Name: ${data.name}
+WhatsApp: ${data.phone}
+Email: ${data.email || "Not provided"}
+Current location: ${data.location}
+Current / highest qualification: ${data.qualification || "Not provided"}
+I need help with: ${data.interest}
+Preferred subject: ${data.subject || "Not provided"}
+Preferred start: ${data.start || "Not provided"}
+
+My questions / message:
+${data.message || "No additional message."}`;
+  }
+
+  function sendFormToWhatsApp(){
+    const form = document.getElementById("consultationForm");
+
+    if(!form.checkValidity()){
+      form.reportValidity();
+      return;
+    }
+
+    const data = getFormData();
+
+    // Save a copy locally for testing on this browser.
+    saveLeadLocally(data);
+
+    const url = "https://wa.me/923108819008?text=" + encodeURIComponent(createWhatsAppMessage(data));
+    window.open(url, "_blank");
+
+    document.getElementById("formSuccess").classList.add("show");
+  }
+
+  function submitConsultation(event){
+    event.preventDefault();
+
+    const form = document.getElementById("consultationForm");
+
+    if(!form.checkValidity()){
+      form.reportValidity();
+      return;
+    }
+
+    const data = getFormData();
+
+    // This stores the submission in the browser for testing.
+    // A hosted email/database service will be connected in the next stage.
+    saveLeadLocally(data);
+
+    document.getElementById("formSuccess").classList.add("show");
+
+    // Prepare WhatsApp so the student can send the consultation directly.
+    const url = "https://wa.me/923108819008?text=" + encodeURIComponent(createWhatsAppMessage(data));
+    window.open(url, "_blank");
+  }
+
+  function saveLeadLocally(data){
+    const oldLeads = JSON.parse(localStorage.getItem("skylineLeads") || "[]");
+
+    oldLeads.push({
+      ...data,
+      submittedAt: new Date().toLocaleString()
+    });
+
+    localStorage.setItem("skylineLeads", JSON.stringify(oldLeads));
+  }
+
+  /* Optional test tool for the website owner.
+     On your own laptop, open the browser console and type:
+     skylineLeads()
+     This shows saved test submissions in that browser only.
+  */
+  function skylineLeads(){
+    console.table(JSON.parse(localStorage.getItem("skylineLeads") || "[]"));
+  }
+
+  /* =========================
+     MOBILE MENU
+     ========================= */
+
+  function toggleMenu(){
+    document.getElementById("navLinks").classList.toggle("open");
+  }
+
+  function closeMenu(){
+    document.getElementById("navLinks").classList.remove("open");
+  }
+
+  /* =========================
+     INITIAL LOAD
+     ========================= */
+
+  displayCourses(courses);
+  displayUniversities(universities);
+</script>
+
+</body>
+</html>
